@@ -127,7 +127,6 @@ function init() {
   
 }
 
-headerDate();
 
 today.forEach(function(thisTime) {
     let hourBlock = $('<form>').attr({
@@ -142,8 +141,7 @@ today.forEach(function(thisTime) {
     });
 
     
-
-let eachHour = $('<div>').attr({
+    let eachHour = $('<div>').attr({
     'class': 'col-md-9 description p-0'
 });
 
@@ -181,9 +179,10 @@ let mySchedule = $('<textarea>');
         
 })
 
+headerDate();
 init();
 
-console.log(init)
+
    
 $('.saveBtn').on('click', function(event){
     event.preventDefault();
@@ -191,7 +190,7 @@ $('.saveBtn').on('click', function(event){
 
      let saveContent = $(this).siblings('.description').children('.future').attr('id');
     
-       today[saveContent].reminder = $(this).siblings('.description').children('.future').val();
+    today[saveContent].reminder = $(this).siblings('.description').children('.future').val();
       
     
      saveDate();
